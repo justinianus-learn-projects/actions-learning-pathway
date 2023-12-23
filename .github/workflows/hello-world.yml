@@ -1,9 +1,13 @@
 name: hello-world
 on: push
-jobs: 
+jobs:
   hello-world-job:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "$(cat hello_world.txt)"
+  my-job:
+    uses: justinianus-learn-projects/actions-learning-pathway/.github/workflows/build-test-deploy.yml@main
+    with:
+      node-version: '18.x'
