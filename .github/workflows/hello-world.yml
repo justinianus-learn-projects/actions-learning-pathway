@@ -8,6 +8,10 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "$(cat hello_world.txt)"
   my-job:
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     uses: justinianus-learn-projects/actions-learning-pathway/.github/workflows/build-test-deploy.yml@main
     with:
       node-version: '18.x'
